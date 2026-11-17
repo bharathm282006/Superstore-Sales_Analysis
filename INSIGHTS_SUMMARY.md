@@ -1,49 +1,72 @@
 # Superstore Sales Analysis — Business Insights
 
-## Dataset and method
+## Dataset and Method
 
-- Dataset: US Sample Superstore
-- Prepared file: `2_cleaned_data/Superstore_cleaned.csv`
-- Records: 9,994 rows
-- Distinct orders: 5,009
-- Analysis basis: calculations from the included prepared CSV using sales, profit, order IDs, region, category, segment, sub-category, and product fields.
+- **Dataset:** US Sample Superstore
+- **Prepared file:** `2_cleaned_data/Superstore_cleaned.csv`
+- **Total records:** 9,994
+- **Distinct orders:** 5,009
+- **Analysis basis:** Sales, profit, order IDs, region, category, customer segment, sub-category, and product information.
 
-## 1. Overall performance
+The analysis focuses on identifying business performance patterns and opportunities for improvement.
+
+---
+
+## 1. Overall Performance
 
 | KPI | Value |
 |---|---:|
-| Total sales | **$2,297,201.07** |
-| Total profit | **$286,397.02** |
-| Distinct orders | **5,009** |
-| Average sales per order | **$458.61** |
-| Overall profit margin | **12.47%** |
+| Total Sales | **$2,297,201.07** |
+| Total Profit | **$286,397.02** |
+| Total Orders | **5,009** |
+| Average Sales per Order | **$229.86** |
+| Overall Profit Margin | **12.47%** |
 
-Average sales per order is calculated as total sales divided by distinct order IDs. It is not the average of the individual transaction-row sales values.
+**Insight:** The business generated approximately $2.30 million in sales and $286.40K in profit, with an overall profit margin of 12.47%.
 
-## 2. Regional performance
+---
 
-| Region | Sales | Profit | Profit margin |
+## 2. Regional Performance
+
+| Region | Sales | Profit | Profit Margin |
 |---|---:|---:|---:|
 | West | $725,457.93 | $108,418.45 | **14.94%** |
 | East | $678,781.36 | $91,522.78 | **13.48%** |
 | Central | $501,239.88 | $39,706.36 | **7.92%** |
 | South | $391,721.90 | $46,749.43 | **11.93%** |
 
-**Insight:** West has the highest sales and profit margin. Central has the lowest margin despite generating more sales than South. This makes Central a priority for further investigation into discount levels, product mix, and operating costs; the figures alone do not prove the cause.
+**Insights:**
 
-## 3. Category performance
+- West generated the highest sales and profit.
+- East ranked second in both sales and profit.
+- Central had the lowest profit margin at 7.92%.
+- South generated the lowest sales but achieved a higher profit margin than Central.
 
-| Category | Sales | Profit | Profit margin |
+**Recommendation:** Investigate the Central region's lower profitability by reviewing its product mix, discounting patterns, and operating costs.
+
+---
+
+## 3. Category Performance
+
+| Category | Sales | Profit | Profit Margin |
 |---|---:|---:|---:|
 | Technology | $836,154.10 | $145,454.95 | **17.40%** |
 | Office Supplies | $719,046.99 | $122,490.80 | **17.04%** |
 | Furniture | $741,999.98 | $18,451.27 | **2.49%** |
 
-**Insight:** Technology produces the highest sales and profit margin. Furniture has substantial sales but a much lower margin, so increasing Furniture sales alone may not improve overall profitability.
+**Insights:**
 
-## 4. Sub-category profit warning
+- Technology generated the highest sales and profit.
+- Office Supplies achieved a strong profit margin of 17.04%.
+- Furniture generated substantial sales but had a comparatively low profit margin of 2.49%.
 
-| Sub-category | Sales | Profit | Profit margin |
+**Recommendation:** Review Furniture pricing, discounting, and product costs to identify opportunities to improve profitability.
+
+---
+
+## 4. Sub-Category Profitability
+
+| Sub-Category | Sales | Profit | Profit Margin |
 |---|---:|---:|---:|
 | Tables | $206,965.68 | **-$17,725.48** | **-8.56%** |
 | Bookcases | $114,880.05 | **-$3,472.56** | **-3.02%** |
@@ -51,19 +74,36 @@ Average sales per order is calculated as total sales divided by distinct order I
 | Copiers | $149,528.01 | $55,617.82 | **37.19%** |
 | Accessories | $167,380.31 | $41,936.64 | **25.06%** |
 
-**Insight:** Tables, Bookcases, and Supplies record losses in the prepared dataset. Copiers and Accessories show comparatively high profit margins. These differences warrant product-level review before changing prices or inventory.
+**Insights:**
 
-## 5. Customer segment performance
+- Tables recorded the highest loss among the listed sub-categories.
+- Bookcases and Supplies also recorded negative profits.
+- Copiers achieved the highest profit margin among the listed sub-categories.
+- Accessories also demonstrated strong profitability.
 
-| Segment | Sales | Profit | Profit margin |
+**Recommendation:** Investigate loss-making sub-categories and review pricing, discount policies, supplier costs, and product-level performance.
+
+---
+
+## 5. Customer Segment Performance
+
+| Segment | Sales | Profit | Profit Margin |
 |---|---:|---:|---:|
 | Consumer | $1,161,401.34 | $134,119.21 | **11.55%** |
 | Corporate | $706,146.44 | $91,979.13 | **13.03%** |
 | Home Office | $429,653.29 | $60,298.68 | **14.03%** |
 
-**Insight:** Consumer contributes the most sales, while Home Office has the highest profit margin. Segment strategies can therefore consider both scale and profitability rather than sales alone.
+**Insights:**
 
-## 6. Highest-revenue products
+- Consumer contributed the highest sales and total profit.
+- Corporate achieved a profit margin of 13.03%.
+- Home Office recorded the highest profit margin at 14.03%.
+
+**Recommendation:** Develop segment-specific strategies that consider both sales contribution and profitability.
+
+---
+
+## 6. Highest-Revenue Products
 
 | Rank | Product | Sales |
 |---:|---|---:|
@@ -71,19 +111,43 @@ Average sales per order is calculated as total sales divided by distinct order I
 | 2 | Fellowes PB500 Electric Punch Plastic Comb Binding Machine with Manual Bind | $27,453.38 |
 | 3 | Cisco TelePresence System EX90 Videoconferencing Unit | $22,638.48 |
 
-**Insight:** The leading product by sales generates more than twice the sales of the second-ranked product in this dataset.
+**Insights:**
 
-## Business recommendations
+- Canon imageCLASS 2200 Advanced Copier was the highest-revenue product.
+- Its sales were more than twice those of the second-ranked product.
+- These products are important contributors to overall sales performance.
 
-1. **Review Central region performance:** Compare discounting and product mix with West and East to understand the margin gap.
-2. **Investigate loss-making sub-categories:** Review pricing, discount rules, supplier costs, and returns for Tables, Bookcases, and Supplies.
-3. **Protect profitable categories:** Understand which Technology and Office Supplies products contribute to their stronger margins.
-4. **Use segment-specific strategies:** Consumer is the largest sales segment, while Home Office has the strongest margin.
-5. **Monitor product concentration:** Track availability and profitability of high-revenue products, not sales alone.
-6. **Evaluate discounts with order-level profit:** Avoid assuming a discount threshold causes losses without validating the calculation at the order level.
+**Recommendation:** Monitor the availability, sales trends, and profitability of high-revenue products.
 
-## Important interpretation notes
+---
 
-- These findings are descriptive. They show patterns in the dataset but do not establish why those patterns occurred.
-- Discount impact should be validated with a clearly defined order-level analysis before setting a discount cap. The earlier summary's discount-band figures are not reproduced here because the included SQL file does not contain the corresponding calculation.
-- The prepared CSV has 9,994 rows, zero exact duplicate rows, and zero missing values in the file-level check performed for this updated summary.
+## 7. Business Recommendations
+
+Based on the analysis, the following recommendations can help improve business performance:
+
+1. **Improve Central region profitability:** Investigate the reasons behind its comparatively low profit margin.
+2. **Review loss-making sub-categories:** Focus on Tables, Bookcases, and Supplies to identify opportunities to reduce losses.
+3. **Strengthen profitable categories:** Continue monitoring Technology and Office Supplies because of their strong profit contributions.
+4. **Develop customer segment strategies:** Focus on Consumer for sales contribution and Home Office for its higher profit margin.
+5. **Monitor high-revenue products:** Track product availability, sales, and profitability.
+6. **Evaluate discount strategies:** Examine the relationship between discounts and order-level profitability before introducing discount limits.
+
+---
+
+## 8. Important Interpretation Notes
+
+- The findings are based on descriptive analysis of the available Superstore dataset.
+- The analysis identifies patterns and relationships but does not establish the causes behind them.
+- Discount impact should be validated using a clearly defined order-level analysis before making pricing decisions.
+- The prepared CSV contains 9,994 records.
+- The file-level data quality check found zero exact duplicate rows and zero missing values.
+
+---
+
+## Conclusion
+
+The analysis highlights differences in sales and profitability across regions, product categories, sub-categories, and customer segments.
+
+The West region and Technology category demonstrated strong performance, while the Central region and certain Furniture sub-categories require further investigation.
+
+The findings provide a foundation for understanding business performance and identifying areas for improvement using SQL analysis and Power BI visualization.
